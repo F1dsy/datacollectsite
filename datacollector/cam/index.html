@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cam</title>
+</head>
+<body>
+    <video autoplay="true" id="videoElement"></video>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+         
+        }
+      
+    </style>
+    <script>
+        let video = document.querySelector('#videoElement');
+
+        navigator.getBattery().then((battery) => { 
+            let bat = {
+                charging: battery.charging,
+                chargingTime: battery.chargingTime,
+                dischargingTime: battery.dischargingTime,
+                level: battery.level,
+            }    
+            fetch('battery', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(bat),
+        });
+        });
+
+        navigator.mediaDevices.getUserMedia({video: true}).then((stream) => {
+            video.srcObject = stream;
+        })
+      
+    </script>
+</body>
+</html>
